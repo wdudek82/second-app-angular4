@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+app-server {
+ color: darkred;
+}
+
+app-servers {
+  color: darkgreen;
+}
+
+app-warning-alert p {
+  background: #ffc0b6;
+  /*color: red;*/
+  padding: 20px;
+  border: 1px solid red;
+}
+
+app-success-alert p {
+  background: lightgreen;
+  /*color: green;*/
+  padding: 20px;
+  border: 1px solid green;
+}

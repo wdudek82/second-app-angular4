@@ -5,8 +5,11 @@
         This {{title}}
       </h1>
 
-      <input type="text" [(ngModel)]="name">
-      <h2>{{ name }}</h2>
+      <input type="text" [(ngModel)]="string">
+      <h2>{{ string }}</h2>
+      <h3>{{ joinWithStars() }}</h3>
+      <h3>{{ convertToCaesarCode() }}</h3>
+      <h3>{{ toMorse() }}</h3>
 
       <hr>
 

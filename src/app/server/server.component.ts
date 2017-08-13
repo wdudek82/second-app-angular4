@@ -7,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./server.component.css']
 })
 export class ServerComponent {
-  test = 'server component';
+  serverID = 1;
+  status = 1;
 }

@@ -1,6 +1,36 @@
 <app-server></app-server>
 <app-server></app-server>
 
-<p>
-  servers works!
-</p>
+<div class="section">
+  <input
+    type="text"
+    class="form-constrol"
+    (input)="onUpdateServerName($event)"
+  >
+
+  <br>
+
+  <button class="btn btn-default btn-sm"
+          [disabled]="!allowNewServer"
+          (click)="onEnableServer()"
+  >Enable</button>
+
+  <button class="btn btn-default btn-sm"
+          [disabled]="!allowNewServer"
+          (click)="onDisableServer()"
+  >Disable</button>
+
+  <button class="btn btn-warning btn-sm" (click)="onCreateServer()">
+    Create Server
+  </button>
+
+  <p id="server-status">{{ serverStatus }}</p>
+</div>
+
+<div>
+  {{ allowNewServer }}
+  <p [innerText]="allowNewServer"></p>
+  <button class="btn btn-default" #item (click)="countDown()"
+          [disabled]="counterLocked"
+  >{{ countButton }}</button>
+</div>

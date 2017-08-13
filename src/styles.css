@@ -8,14 +8,24 @@ app-servers {
 
 app-warning-alert p {
   background: #ffc0b6;
-  /*color: red;*/
   padding: 20px;
   border: 1px solid red;
 }
 
 app-success-alert p {
   background: lightgreen;
-  /*color: green;*/
   padding: 20px;
   border: 1px solid green;
+}
+
+.section {
+  border: 1px solid black;
+  padding: 30px 10px 0;
+  background: lightgray;
+  max-width: 300px;
+}
+
+#server-status {
+  color: black;
+  margin: 30px;
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-servers',
@@ -7,9 +9,58 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ServersComponent implements OnInit {
 
-  constructor() { }
+  allowNewServer = false;
+  serverStatus = 'Server: Disabled';
+  counterLocked = false;
+  countButton = 'Count Down';
+  countStatus = true;
+  count = 15;
 
-  ngOnInit() {
+  constructor() {
+    setTimeout(() => {
+      this.allowNewServer = true;
+    }, 2000);
+  }
+
+  ngOnInit() {}
+
+  onEnableServer() {
+    this.serverStatus = 'Server: Enabled';
+    this.countStatus = true;
+  }
+
+  onDisableServer() {
+    this.serverStatus = 'Server: Disabled';
+    this.countStatus = false;
+  }
+
+  onUpdateServerName() {
+
+  }
+
+  onCreateServer() {
+
+  }
+
+  printElement(event, item) {
+    console.log(event, item);
+  }
+
+  countDown() {
+    this.counterLocked = true;
+
+    const timer = setInterval(() => {
+      this.count -= 1;
+      this.countButton = `00:00:${this.count}`;
+
+
+      if (this.count < 0) {
+        clearInterval(timer);
+        this.count = this.countStatus ? 5 : 3;
+        this.countButton = 'Count Down';
+        this.counterLocked = false;
+      }
+    }, 1000);
   }
 
 }

@@ -10,6 +10,7 @@ export class AssignmentsComponent implements OnInit {
   username = '';
   displayDetails = false;
   clicks = [];
+  loggedClicks = 0;
 
   constructor() { }
 
@@ -17,11 +18,11 @@ export class AssignmentsComponent implements OnInit {
   }
 
   toggleDisplay() {
-    const order = this.clicks.length + 1;
-    const timestamp = Date.now();
+    ++this.loggedClicks;
+    const timestamp = new Date;
 
     this.displayDetails = !this.displayDetails;
-    this.clicks.push(`${order}: ${timestamp}`);
+    this.clicks.push(`${this.loggedClicks}: ${timestamp}`);
   }
 
   blueBackground(click) {

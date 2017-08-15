@@ -1,12 +1,10 @@
-<app-server></app-server>
-<app-server></app-server>
-
 <div class="section">
+  <label>Server Name</label>
   <input
-    type="text"
     class="form-constrol"
-    (input)="onUpdateServerName($event)"
-  >
+    (input)="onUpdateServerName($event)">
+
+  <p>{{ serverName }}</p>
 
   <br>
 
@@ -24,13 +22,20 @@
     Create Server
   </button>
 
+
   <p id="server-status">{{ serverStatus }}</p>
 </div>
-
 <div>
   {{ allowNewServer }}
   <p [innerText]="allowNewServer"></p>
-  <button class="btn btn-default" #item (click)="countDown()"
-          [disabled]="counterLocked"
-  >{{ countButton }}</button>
+  <button
+    class="btn btn-default"
+    #item
+    (click)="countDown()"
+    [disabled]="counterLocked"
+  >{{ countButton }}
+  </button>
 </div>
+
+<app-server></app-server>
+<app-server></app-server>

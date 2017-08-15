@@ -11,6 +11,8 @@ export class ServersComponent implements OnInit {
 
   allowNewServer = false;
   serverStatus = 'Server: Disabled';
+  serverName: string;
+
   counterLocked = false;
   countButton = 'Count Down';
   countStatus = true;
@@ -34,8 +36,8 @@ export class ServersComponent implements OnInit {
     this.countStatus = false;
   }
 
-  onUpdateServerName() {
-
+  onUpdateServerName(event: any) {
+    this.serverName = (<HTMLInputElement>event.target).value;
   }
 
   onCreateServer() {

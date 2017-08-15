@@ -8,5 +8,17 @@ import { Component } from '@angular/core';
 })
 export class ServerComponent {
   serverID = 1;
-  status = 1;
+  serverStatus = 1;
+
+  constructor() {
+    this.serverStatus = Math.random() > 0.5 ? 1 : 0;
+  }
+
+  getServerStatus() {
+    return this.serverStatus;
+  }
+
+  getColor() {
+    return this.serverStatus ? 'green' : 'red';
+  }
 }

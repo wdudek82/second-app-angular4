@@ -23,6 +23,19 @@
 
       <!-- Output the username property via String Interpolation (in a paragraph below the input) -->
       <p>{{ username }}</p>
+
+      <button
+        class="btn btn-primary btn-sm"
+      (click)="toggleDisplay()"
+      >Display Details</button>
+      <p *ngIf="displayDetails">Secret password = tuna</p>
+
+      <p
+        *ngFor="let click of clicks"
+        [ngStyle]="{background: blueBackground(click)}"
+        [ngClass]="{blueLogs: whiteColor(click)}"
+      >{{ click }}
+      </p>
     </div>
   </div>
 </div>

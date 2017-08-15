@@ -1,0 +1,29 @@
+<hr>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="input-group">
+        <!-- Add an Input field which updates a property ('username') via Two-Way-Binding -->
+        <input
+          class="form-control"
+          placeholder="Username"
+          aria-label="Username"
+          [(ngModel)]="username">
+        <span class="input-group-btn">
+        <!-- Add a button which may only be clicked if the username is NOT an empty string -->
+        <button
+          class="btn btn-secondary"
+          type="button"
+          [disabled]="username === ''"
+          (click)="username = ''"
+        >Reset</button>
+        </span>
+      </div>
+
+      <!-- Output the username property via String Interpolation (in a paragraph below the input) -->
+      <p>{{ username }}</p>
+    </div>
+  </div>
+</div>
+

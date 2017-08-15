@@ -11,6 +11,7 @@ export class ServersComponent implements OnInit {
 
   allowNewServer = false;
   serverStatus = 'Server: Disabled';
+  serverCreationStatus: string;
   serverName: string;
 
   counterLocked = false;
@@ -41,7 +42,7 @@ export class ServersComponent implements OnInit {
   }
 
   onCreateServer() {
-
+    this.serverCreationStatus = 'Server was created! Name is ' + this.serverName;
   }
 
   printElement(event, item) {

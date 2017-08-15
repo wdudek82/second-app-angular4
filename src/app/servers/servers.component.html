@@ -1,10 +1,15 @@
 <div class="section">
   <label>Server Name</label>
+  <!--Property Binding-->
   <input
-    class="form-constrol"
+    class="form-control"
     (input)="onUpdateServerName($event)">
 
-  <p>{{ serverName }}</p>
+  <!--Two-way Data Binding-->
+  <input
+    type="text"
+    class="form-control"
+    [(ngModel)]="serverName">
 
   <br>
 
@@ -21,6 +26,8 @@
   <button class="btn btn-warning btn-sm" (click)="onCreateServer()">
     Create Server
   </button>
+
+  <p>{{ serverCreationStatus }}</p>
 
 
   <p id="server-status">{{ serverStatus }}</p>
